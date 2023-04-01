@@ -1,0 +1,80 @@
+// Import Slick Slider CSS
+@import 'slick-carousel/slick/slick';
+
+// Define styles for Slick Slider
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  // Style the arrows
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+    font-size: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+
+    &:before {
+      font-size: 20px;
+    }
+
+    &.slick-prev {
+      left: 10px;
+    }
+
+    &.slick-next {
+      right: 10px;
+    }
+  }
+
+  // Style the dots
+  .slick-dots {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0 5px;
+
+      button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: #ddd;
+
+        &.slick-active {
+          background-color: #333;
+        }
+      }
+    }
+  }
+
+  // Style the slides
+  .slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+
+    &.slick-active {
+      display: block;
+    }
+
+    // Your slide styles here...
+  }
+}

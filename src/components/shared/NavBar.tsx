@@ -5,34 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const NavBar = () => {
     return (
-        <nav className='w-100 position-absolute'>
-            <div className='top-nav py-3'>
-                <div className='container d-flex justify-content-between align-items-center'>
-                    <div className=' d-flex align-items-center'>
-                        <p>Follow us : </p>
-                        <div>
-                            <span className=''><i className="fa-brands fa-square-facebook"></i></span>
-                            <span><i className="fa-brands fa-square-twitter"></i></span>
-                            <span><i className="fa-brands fa-square-instagram"></i></span>
-                            <span><i className="fa-brands fa-linkedin"></i></span>
-                        </div>
-                        <div>
-                            <span><i className="fa-solid fa-phone"></i></span>
-                            <span>+880 1706-988476</span>
-                        </div>
-                    </div>
-                    <div className=' d-flex'>
-                        <div className='d-flex'>
-                            <img className='img-fluid' style={{ height: '20px' }} src="assets/images/language/uk.png" alt="" />
-                            <select className="border-0 outline-0 focus:outline-0 p-0 bg-transparent" aria-label="Default select example">
-                                <option selected>English</option>
-                                <option value="বাংলা">বাংলা</option>
-                            </select>
-                        </div>
-                        <span>Login</span>
-                    </div>
-                </div>
-            </div>
+        <nav className='w-100 position-absolute top-0' style={{zIndex: 999}}>
             <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand style={{ width: '100px' }} href="#home">
@@ -48,7 +21,7 @@ const NavBar = () => {
                             <Nav.Link href="#package" className='fw-semibold'>Package</Nav.Link>
                             <Nav.Link href="#blog" className='fw-semibold'>Blog</Nav.Link>
                             <Nav.Link href="#contact" className='fw-semibold'>Contact us</Nav.Link>
-                            <Nav.Link href="#package" className='bordered-btn rounded-pill sm'>Get Started</Nav.Link>
+                            <Nav.Link href="#package"><button className='primary-btn rounded-pill sm'>Get Started</button></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

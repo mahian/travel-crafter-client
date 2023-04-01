@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import SectionTitle from '../utility/SectionTitle';
 
 const Specialty = () => {
     const specialtys = [
@@ -10,6 +11,10 @@ const Specialty = () => {
     ]
     return (
         <section className='container py-5'>
+            <SectionTitle>
+                <h2>this is a section title</h2>
+                <p>this is a description title</p>
+            </SectionTitle>
             <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
                 {
                     specialtys.map(data => (
