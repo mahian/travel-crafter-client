@@ -6,8 +6,8 @@ import Specialty from '@/components/home/Specialty'
 import Packages from '@/components/home/Packages'
 import About from '@/components/home/About'
 import Blogs from '@/components/home/Blogs'
-import Faq from '@/components/home/Faq'
-import Slider from '@/components/home/Slider'
+import Form from '@/components/home/Form'
+import Features from '@/components/home/Features'
 
 export default function Home() {
   return (
@@ -28,10 +28,10 @@ export default function Home() {
       <main>
         <NavBar />
         <Hero />
-        <Slider />
+        <Form />
         <Specialty />
         <About />
-        <Faq />
+        <Features />
         <Packages />
         <Blogs />
         <Footer />

@@ -4,22 +4,21 @@ import React from 'react';
 const Hero = () => {
     return (
         <>
-            <div
-                className='min-vh-100 w-100 d-flex flex-col align-items-center justify-content-center' style={{
-                    backgroundImage: 'linear-gradient(to bottom, #00000030, #00000030), url(assets/images/bg-3.jpg)',
-                    objectFit: 'cover',
-                    backgroundRepeat: 'noRepeat',
-                    backgroundSize: 'cover'
-                }}>
+            <div className=''>
                 <div className="container">
-                    <div className="row flex-col align-items-center justify-content-center">
-                        <div className="col-md-12 text-center">
-                            <div>
-                                <h1 className="fw-bold text-white uppercase" style={{ fontSize: '52px' }}>17 Years of excellence in</h1>
-                                <p className="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed maxime incidunt fugit, optio distinctio quo.</p>
-                                <div className='mt-5'>
-                                    <Link href="" ><button className="primary-btn rounded-0">Our Services</button></Link>
-                                    <Link href="" ><button className="white-btn rounded-0 ms-3">Contact Now</button></Link>
+                    <div className='header-main'>
+                        <div className='bg-dark h-100 d-flex justify-content-center'>
+                            <div className="row">
+                                <div className="col-md-6 d-flex flex-column justify-content-center p-5">
+                                    <h1 className="header-info">Adventure Begins Here</h1>
+                                    <p className='text-light'>No matter who you’re looking to travel with, you can depend on our 2,500 trusted operators to make sure everything’s taken care of.</p>
+                                    <div className='mt-3'>
+                                        <button className="primary-btn me-3"><i className="fa-solid fa-circle-info"></i> Learn More</button>
+                                        <button className="white-btn"><i className="fab fa-apple"></i> Book now</button>
+                                    </div>
+                                </div>
+                                <div className="col-md-6 text-center">
+                                    <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHRyYXZlbHxlbnwwfHwwfHw%3D&w=1000&q=80" className="" width="300" alt="iPhone Image" />
                                 </div>
                             </div>
                         </div>

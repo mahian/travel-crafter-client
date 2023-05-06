@@ -7,7 +7,7 @@ $media-mobile: "only screen and (max-width : 600px)";
 $media-mobile-sm: "only screen and (max-width : 480px)";
 
 :root {
-    --primary-color: #ff7c5c;
+    --primary-color: #0b56a4;
     --secondary-color: #7e7e7e;
 }
 
@@ -16,7 +16,6 @@ $media-mobile-sm: "only screen and (max-width : 480px)";
 
 body {
     background: #fff;
-    color: #4a4a4a;
 }
 
 body,
@@ -89,27 +88,63 @@ body {
     padding: 0;
 }
 
-.submit-form {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 1px 1px 5px #c5c5c5;
-
-    .form-control {
-        padding: 9px 18px;
-        border: none;
-        outline: none;
-        background: #fbfbfb;
-        border-radius: 8px;
-
-        &:focus {
-            background: #fafafa;
+.navbar {
+    .navbar-nav .nav-link {
+        padding-right: 2rem;
+        color: #000000;
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+    .nav-btn {
+        border: 2px solid var(--primary-color);
+        background: transparent;
+        border-radius: 5px;
+        padding: 5px 20px;
+        color: var(--primary-color);
+        font-weight: 600;
+        transition: 0.2s;
+        &:hover {
+            background-color: var(--primary-color);
+            color: white;
         }
     }
 }
 
+/* Main Section */
+.header-main {
+    .header-info {
+        font-weight: 900;
+        font-size: 3rem;
+        color: #fff;
+    }
+    .btn-outline-light {
+        margin-left: 20px;
+    }
+    .btn-space {
+        margin-top: 20px;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+.sidebar-menu {
+    border: none;
+}
+
+.main-form {
+    background: linear-gradient(#0b55a4e7, #0b55a4e7),
+        url(https://st2.depositphotos.com/3725083/5485/i/950/depositphotos_54856347-stock-photo-travel-the-world-monument-concept.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    padding: 40px;
+}
+
 .form-control:focus {
     box-shadow: none;
-    background: transparent;
 }
 
 a {
@@ -142,33 +177,32 @@ a {
 
 .primary-btn {
     background-color: var(--primary-color);
-    padding: 15px 30px;
+    padding: 12px 30px;
     color: white;
     text-decoration: none;
     font-size: 17px;
     font-weight: 700;
     border: 0;
     outline: none;
+    border-radius: 6px;
 
     &:hover {
-        color: var(--primary-color);
-        background: white;
+        opacity: 0.9;
     }
 }
-
 .white-btn {
     background-color: white;
-    padding: 15px 30px;
+    padding: 12px 30px;
     color: var(--primary-color);
     text-decoration: none;
     font-size: 17px;
     font-weight: 700;
-    outline: none;
     border: 0;
+    outline: none;
+    border-radius: 6px;
 
     &:hover {
-        background-color: var(--primary-color);
-        color: white;
+        opacity: 0.9;
     }
 }
 
@@ -225,7 +259,6 @@ a {
         top: -50%;
     }
 }
-
 
 /* package */
 .package-card {
@@ -303,7 +336,6 @@ a {
 }
 
 .blog-card {
-
     img,
     h2 {
         transition: 0.3s;
@@ -319,21 +351,17 @@ a {
         }
     }
 }
+#contact-us {
+    .icon {
+        height: 45px;
+        width: 45px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        color: white;
+    }
+}
 
 /* media querys */
-@media only screen and (max-width: 600px) {
-    .search-form {
-        position: static;
-
-        .input-group {
-            border: none;
-            border-bottom: 1px solid #e5e5e5;
-            margin: 10px 0;
-        }
-    }
-
-
-}
 
 // accordion =================================================================================
 
@@ -343,6 +371,110 @@ a {
 
 [data-toggle="collapse"].collapsed i:before {
     content: "\f067";
+}
+
+@mixin mQ($px) {
+    @media screen and (max-width: $px) {
+        @content;
+    }
+}
+#features {
+    .header {
+        @include mQ(600px) {
+            margin-bottom: 70px !important;
+        }
+
+        span {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 14px;
+            color: #471aa0;
+        }
+
+        p {
+            max-width: min(40ch, 100% - 2rem);
+            line-height: 1.6;
+            color: #565656;
+        }
+    }
+
+    .item {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 28px 25px;
+            color: #fff;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(
+                0deg,
+                #020024 0%,
+                #000032a1 3%,
+                #17d9ff00 100%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            span {
+                background: rgba(255, 255, 255, 0.25);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                border-radius: 60px;
+                padding: 10px 20px;
+                display: inline-block;
+            }
+
+            > div {
+                h2 {
+                    letter-spacing: 0.5px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+.owl-nav {
+    position: absolute;
+    top: -100px;
+    right: 0;
+
+    @include mQ(600px) {
+        top: -60px !important;
+    }
+
+    button {
+        background: #fff !important;
+        width: 45px;
+        height: 45px;
+        font-size: 25px !important;
+        box-shadow: 0px 0px 17px #00000005;
+        border-radius: 50%;
+
+        &:nth-of-type(1) {
+            margin-right: 13px;
+        }
+    }
 }
 
 #accordion {
@@ -362,7 +494,7 @@ a {
         font-weight: 700;
         width: 100%;
         text-align: left;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
         border-radius: 0;
 
         i {
@@ -383,7 +515,6 @@ a {
 
     .accordion-body {
         padding: 40px 55px;
-
 
         ul {
             list-style: none;
@@ -407,8 +538,6 @@ a {
     }
 }
 
-
-
 // swiper slider ================================================================
 .swiper_container {
     height: 52rem;
@@ -421,24 +550,19 @@ a {
 
     .swiper-slide {
         width: 37rem;
-        height: 42rem;
+        height: 25rem;
         position: relative;
 
-        @media #{$media-mobile} {
-            width: 28rem !important;
-            height: 36rem !important;
-        }
+        // @media #{$media-mobile} {
+        //     width: 28rem !important;
+        //     height: 36rem !important;
+        // }
 
         img {
-            width: 37rem;
-            height: 42rem;
+            width: 100%;
+            height: 100%;
             border-radius: 2rem;
             object-fit: cover;
-
-            @media #{$media-mobile} {
-                width: 28rem !important;
-                height: 36rem !important;
-            }
         }
     }
 
@@ -449,7 +573,7 @@ a {
 
     .slider-controller {
         position: relative;
-        bottom: 2rem;
+        bottom: 6rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -457,7 +581,7 @@ a {
         .swiper-button-next {
             left: 58% !important;
             transform: translateX(-58%) !important;
-            &::after{
+            &::after {
                 content: "";
             }
             @media #{$media-tablet} {
@@ -467,7 +591,7 @@ a {
         }
 
         .swiper-button-prev {
-            &::after{
+            &::after {
                 content: "";
             }
             @media #{$media-tablet} {
@@ -491,7 +615,7 @@ a {
         .swiper-pagination {
             position: relative;
             width: 15rem !important;
-            bottom: 1rem;
+            bottom: 0rem;
             .swiper-pagination-bullet {
                 filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
             }

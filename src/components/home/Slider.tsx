@@ -73,7 +73,6 @@ const Slider = () => {
                 </div>
             </Swiper>
 
-
         </div>
     );
 };
